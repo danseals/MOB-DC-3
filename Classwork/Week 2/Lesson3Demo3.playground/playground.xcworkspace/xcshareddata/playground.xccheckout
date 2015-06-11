@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>9BD2A0FB-6FBF-4389-959B-9B7EF675167E</string>
+	<string>392C644D-ABCC-438C-99E2-D1A504834C49</string>
 	<key>IDESourceControlProjectName</key>
-	<string>BioApp</string>
+	<string>playground</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BFDAA4717EEB9965546778FF65FDEFE74CECE3C5</key>
 		<string>https://github.com/danseals/MOB-DC-3.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Classwork/Lesson 1/Lesson 2/BioApp/BioApp/BioApp.xcodeproj</string>
+	<string>Classwork/Week 2/Lesson3Demo3.playground/playground.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BFDAA4717EEB9965546778FF65FDEFE74CECE3C5</key>
-		<string>../../../../../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/danseals/MOB-DC-3.git</string>
