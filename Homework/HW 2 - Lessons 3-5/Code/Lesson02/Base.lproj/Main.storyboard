@@ -143,6 +143,9 @@
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addButton:" destination="DXI-gN-4Tg" eventType="touchUpInside" id="Zjv-A7-5Xn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -162,6 +165,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="numberDisplay" destination="qiz-6d-s2d" id="S6h-6T-vhA"/>
+                        <outlet property="numberField" destination="dsS-73-FSq" id="IhB-tK-4Oo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFb-9H-Aa6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -207,6 +214,9 @@
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculateEven:" destination="nKH-F5-XzW" eventType="touchUpInside" id="ZMA-Ci-HVb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -226,6 +236,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="isEvenOrNot" destination="y0y-Zz-8RE" id="Jct-CB-Mtg"/>
+                        <outlet property="numberEntered" destination="UJA-B5-7Cz" id="5Yf-gl-A2R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bic-8V-fDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -261,6 +275,9 @@
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculateFib:" destination="BPG-Q0-b6p" eventType="touchUpInside" id="0b7-Ox-2fZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Should print the xth fibonacci number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpk-q1-6qc">
                                 <rect key="frame" x="155" y="138" width="290" height="21"/>
@@ -283,6 +300,10 @@
                             <constraint firstItem="uuM-Ik-raV" firstAttribute="top" secondItem="Hpk-q1-6qc" secondAttribute="bottom" constant="21" id="scm-VI-6lk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fibNumberLabel" destination="Hpk-q1-6qc" id="i7z-aK-cGD"/>
+                        <outlet property="fibPlaceRequested" destination="Y9T-1j-GS4" id="olF-2p-Iav"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LL4-Hq-ZaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
