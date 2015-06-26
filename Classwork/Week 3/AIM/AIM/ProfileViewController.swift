@@ -16,12 +16,31 @@ class ProfileViewController: UIViewController {
     var location: String?
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var sexLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let name = name {
             nameLabel.text = name
+            nameLabel.textColor = UIColor.blueColor()
+        }
+        
+        if let age = age {
+            ageLabel.text = age
+            ageLabel.textColor = UIColor.blueColor()
+        }
+        
+        if let sex = sex {
+            sexLabel.text = sex
+            sexLabel.textColor = UIColor.redColor()
+        }
+        
+        if let location = location {
+            locationLabel.text = location
+            locationLabel.textColor = UIColor.blueColor()
         }
 
         // Do any additional setup after loading the view.

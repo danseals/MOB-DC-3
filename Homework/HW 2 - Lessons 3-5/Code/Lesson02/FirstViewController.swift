@@ -18,7 +18,7 @@ class FirstViewController: UIViewController {
     
     @IBAction func generateText(sender: UIButton) {
 //        var hello: String
-        textBox.text = "\(helloWorld()) \(generateNameAge()) \(additionalCheckAge())"
+        textBox.text = "\(helloWorld())\n\(generateNameAge())\n\(checkAge())\n\(additionalCheckAge())"
 //
     }
     
@@ -37,17 +37,32 @@ class FirstViewController: UIViewController {
     
 //    TODO three: Hook up the button to a NEW function (in addition to the two above). Print “You can drink” below the above text if the user is above 21. If they are above 18, print “you can vote”. If they are above 16, print “You can drive”
     
+    func checkAge() -> String {
+        var text = "You're too young for fun!"
+        if let age = age.text.toInt() {
+            if (age >= 21) {
+                text = "You can drink"
+            }
+            else if (age >= 18) {
+                text = "You can vote"
+            }
+            else if (age >= 16) {
+                text = "You can drive"
+            }
+        }
+        return text
+    }
     
     
     
 //    TODO four: Hook up the button to a NEW function (in additino to the three above). Print “you can drive” if the user is above 16 but below 18. It should print “You can drive and vote” if the user is above 18 but below 21. If the user is above 21, it should print “you can drive, vote and drink (but not at the same time!”.
     
     func additionalCheckAge() -> String {
-        var text = "You're too young for fun!"
+        var text = "You're still too young for fun!"
         // Why won't my code run if I don't set text to something, I cannot set it to nil either!
             if let age = age.text.toInt() {
                 if (age >= 21) {
-                    text = "You can drive, vote and drink (but not at the same time!"
+                    text = "You can drive, vote and drink (but not at the same time!)"
                 }
                 else if (age >= 16) && (age < 18) {
                     text = "You can drive"

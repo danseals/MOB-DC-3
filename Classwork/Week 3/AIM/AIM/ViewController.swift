@@ -61,8 +61,58 @@ class ViewController: UIViewController {
         submitButton.setTitle("Submit", forState: UIControlState.Normal)
     }
     @IBAction func submitAction(sender: UIButton) {
+//        if let wnd = self.view{
+//            
+//            var v = UIView(frame: wnd.bounds)
+//            v.backgroundColor = UIColor.blueColor()
+//            v.alpha = 1
+//            
+//            wnd.addSubview(v)
+//            UIView.animateWithDuration(0.5, animations: {
+//                v.alpha = 0.0
+//                }, completion: {(finished:Bool) in
+////                    println("inside")
+//                    v.removeFromSuperview()
+//            })
+//        }
+
 
     }
+    @IBAction func clearAction(sender: UIButton) {
+        var refreshAlert = UIAlertController(title: "Refresh", message: "All data will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            self.nameField.text = nil
+            self.ageField.text = nil
+            self.sexField.text = nil
+            self.locationField.text = nil
+            if let wnd = self.view{
+                
+                var v = UIView(frame: wnd.bounds)
+                v.backgroundColor = UIColor.redColor()
+                v.alpha = 1
+                
+                wnd.addSubview(v)
+                UIView.animateWithDuration(0.3, animations: {
+                    v.alpha = 0.0
+                    }, completion: {(finished:Bool) in
+                        //                    println("inside")
+                        v.removeFromSuperview()
+                })
+            }
+
+            println("Handle Ok logic here")
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+            println("Handle Cancel Logic here")
+        }))
+        
+        presentViewController(refreshAlert, animated: true, completion: nil)
+        
+        
+        
+            }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showProfile" {
@@ -70,7 +120,7 @@ class ViewController: UIViewController {
             destinationVC.age = ageField.text
             destinationVC.name = nameField.text
             destinationVC.sex = sexField.text
-            destinationVC.location = sexField.text
+            destinationVC.location = locationField.text
         }
     }
     
