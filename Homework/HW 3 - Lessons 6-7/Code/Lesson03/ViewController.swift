@@ -10,6 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var label: UILabel!
+    
+    override func viewDidLoad() {
+        let swipe = UISwipeGestureRecognizer(target: self, action: "gestureAction")
+        swipe.direction = .Right
+        label.addGestureRecognizer(swipe)
+        label.userInteractionEnabled = true
+    }
+    
+    func gestureAction() {
+        println("Gesture Performed")
+        
+        self.performSegueWithIdentifier("showModal", sender: nil)
+        
+    }
+    
+    
     /*
     TODO one: Hook up a swipeable area on the home screen that must present a modal dialog when swiped. You must create the modal dialog and present it in CODE (not the storyboard).
     TODO two: Add an imageview to the modal dialog presented in TODO two.

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NamesTableViewController: UITableViewController {
+class NamesTableViewController: UITableViewController, AddStudentDelegate {
     
     // Keep track of all names in this array
     var names = [String]()
@@ -26,6 +26,19 @@ class NamesTableViewController: UITableViewController {
         cell.textLabel?.text = studentName
 
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showAddStudent" {
+            let destinationVC = segue.destinationViewController as! AddViewController
+            destinationVC.delegate = self
+        }
+    }
+    
+    func addStudent(name: String) {
+        println("[Names] Add Student")
+        names.append(name)
+        tableView.reloadData()
     }
 
 }

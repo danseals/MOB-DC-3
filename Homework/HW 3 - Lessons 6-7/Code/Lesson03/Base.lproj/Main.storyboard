@@ -67,12 +67,66 @@ It needs to have an image view and a dismiss button that dismisses the modal. Do
                     </view>
                     <navigationItem key="navigationItem" id="hzY-Hy-RMA"/>
                     <connections>
+                        <outlet property="label" destination="NMl-Di-GNm" id="PZL-SS-R31"/>
                         <segue destination="tH5-nV-9zA" kind="show" identifier="show" id="O1F-Kb-DN0"/>
+                        <segue destination="Oxv-XV-Qyy" kind="presentation" identifier="showModal" id="pvy-bh-Sau"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="282.75" y="407"/>
+        </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="W7J-wP-46f">
+            <objects>
+                <viewController id="Oxv-XV-Qyy" customClass="ModalViewController" customModule="Lesson03" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e1X-0E-Foc"/>
+                        <viewControllerLayoutGuide type="bottom" id="LgO-pV-T6b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3ry-MZ-0N1">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3w-d5-XXc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="20" width="110" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="dismissButtonAction:" destination="Oxv-XV-Qyy" eventType="touchUpInside" id="5wL-Pb-XyU"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hello.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Zvj-e6-Vew">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="23" y="88" width="354" height="305"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="q3w-d5-XXc"/>
+                                <exclude reference="Zvj-e6-Vew"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="q3w-d5-XXc"/>
+                                <include reference="Zvj-e6-Vew"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="q3w-d5-XXc" id="MTg-bq-FFC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x67-Gz-ctG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="1089"/>
         </scene>
         <!--Array Table View Controller-->
         <scene sceneID="hS5-QX-ITe">
@@ -93,4 +147,7 @@ It needs to have an image view and a dismiss button that dismisses the modal. Do
             <point key="canvasLocation" x="969" y="407"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hello.jpg" width="150" height="150"/>
+    </resources>
 </document>
