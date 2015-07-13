@@ -17,8 +17,6 @@ class RadioViewController: UIViewController {
     }
     
     @IBAction func postAction(sender: UIButton) {
-        let notification = NSNotification(name: "Hello, World!", object: self)
-        let center = NSNotificationCenter.defaultCenter()
-        center.postNotification(notification)
+        `
     }
 }

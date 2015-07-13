@@ -15,7 +15,6 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
     let cellID = "cellID"
     var dict = [String: String]()
     var array = [String]()
-    // For some reason I cannot make an empty dictionary [String: String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +30,18 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
         TODO four: Make this class a UITableViewDelegate and UITableViewDataSource that supply this table view with cells that correspond to the values in the dictionary. Each cell should print out a unique pair of key/value that the map contains. When a new key/value is inserted, the table view should display it.
         TODO five: Make the background of the text boxes in this controller BLUE when the keyboard comes up, and RED when it goes down. Start with UIKeyboardWillShowNotification and NSNotificationCenter.
         */
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: "UIKeyboardWillShowNotification", object: nil)
+        
+
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        println("Notification Received")
+        firstTextField.backgroundColor = UIColor.blueColor()
+        secondTextField.backgroundColor = UIColor.blueColor()
+        firstTextField.textColor = UIColor.whiteColor()
+        secondTextField.textColor = UIColor.whiteColor()
     }
     
     func textFieldShouldReturn(textfield: UITextField) -> Bool {
@@ -44,6 +55,8 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
             println(dict)
             println(array)
             tableView.reloadData()
+            firstTextField.backgroundColor = UIColor.redColor()
+            secondTextField.backgroundColor = UIColor.redColor()
             return true
         }
     }
