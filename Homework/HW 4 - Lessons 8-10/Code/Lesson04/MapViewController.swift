@@ -14,6 +14,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
     @IBOutlet weak var tableView: UITableView!
     let cellID = "cellID"
     var dict : NSMutableDictionary = ["sample": "sample"]
+    // For some reason I cannot make an empty dictionary [String: String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +48,24 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return dict.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellID) as! UITableViewCell
-//        cell.textLabel?.text = array[indexPath.row]
+        let myDict = dict[indexPath.row]
+//        cell.textLabel?.text = myDict!.key
+
+        
+//        if let myDict = myDict {
+//            cell.textLabel?.text = "\(myDict.key as! String) \(myDict.value as! String)"
+//        }
+        
+//        if let dict = dict {
+                cell.textLabel?.text = "\(myDict?.key)"
+//            }
+
+        
         
         return cell
     }
