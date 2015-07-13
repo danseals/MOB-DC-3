@@ -13,7 +13,8 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
     @IBOutlet weak var secondTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     let cellID = "cellID"
-    var dict : NSMutableDictionary = ["sample": "sample"]
+    var dict = [String: String]()
+    var array = [String]()
     // For some reason I cannot make an empty dictionary [String: String]()
 
     override func viewDidLoad() {
@@ -39,7 +40,9 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
         else {
             self.view.endEditing(true)
             dict["\(firstTextField.text)"] = "\(secondTextField.text)"
+            array.append(firstTextField.text)
             println(dict)
+            println(array)
             tableView.reloadData()
             return true
         }
@@ -48,13 +51,12 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dict.count
+        return array.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellID) as! UITableViewCell
-        let myDict = dict[indexPath.row]
-//        cell.textLabel?.text = myDict!.key
+        cell.textLabel?.text = "\(array[indexPath.row]) \(dict[array[indexPath.row]]!)"
 
         
 //        if let myDict = myDict {
@@ -62,7 +64,6 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
 //        }
         
 //        if let dict = dict {
-                cell.textLabel?.text = "\(myDict?.key)"
 //            }
 
         
