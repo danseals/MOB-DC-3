@@ -17,6 +17,12 @@ class RadioViewController: UIViewController {
     }
     
     @IBAction func postAction(sender: UIButton) {
+<<<<<<< HEAD
         `
+=======
+        let notification = NSNotification(name: "keyword", object: self)
+        let center = NSNotificationCenter.defaultCenter()
+        center.postNotification(notification)
+>>>>>>> e0704aad8623a4ba099d3ea70ffcf908f1c9b791
     }
 }
