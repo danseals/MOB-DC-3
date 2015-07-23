@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Favorite Movie" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ekf-ws-fzl">
-                                <rect key="frame" x="242.5" y="153" width="116" height="30"/>
+                                <rect key="frame" x="242" y="153" width="116" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -27,41 +27,63 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kl9-Cj-V5i" kind="show" id="h3Y-PO-8KV"/>
+                                    <segue destination="LJO-VQ-ee5" kind="show" id="5Jn-OK-51s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHC-5B-oKR">
+                                <rect key="frame" x="277" y="191" width="49" height="30"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitMovie:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HnG-FK-4dx"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="mHC-5B-oKR" secondAttribute="centerX" constant="-1.5" id="1jX-rM-ElR"/>
                             <constraint firstItem="ekf-ws-fzl" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="89" id="2Wj-i7-H1m"/>
+                            <constraint firstItem="mHC-5B-oKR" firstAttribute="top" secondItem="ekf-ws-fzl" secondAttribute="bottom" constant="8" id="TuU-RM-85G"/>
                             <constraint firstAttribute="centerX" secondItem="mvY-KT-ISJ" secondAttribute="centerX" id="byk-PE-aWi"/>
                             <constraint firstAttribute="centerX" secondItem="ekf-ws-fzl" secondAttribute="centerX" id="ncG-2S-EbL"/>
                             <constraint firstItem="mvY-KT-ISJ" firstAttribute="top" secondItem="ekf-ws-fzl" secondAttribute="bottom" constant="131" id="yww-wQ-nnV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b1P-VB-uuo"/>
+                    <connections>
+                        <outlet property="movieField" destination="ekf-ws-fzl" id="fTt-4F-9Nx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1306" y="489"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="oB1-UF-LyF">
+        <!--Movies Table View Controller-->
+        <scene sceneID="hJ7-H3-DWf">
             <objects>
-                <viewController id="kl9-Cj-V5i" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="C04-pm-gsL"/>
-                        <viewControllerLayoutGuide type="bottom" id="cdE-D6-Z2K"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ycy-32-JAy">
+                <tableViewController id="LJO-VQ-ee5" customClass="MoviesTableViewController" customModule="FilesAndPersistence" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Dim-4M-dTf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VFU-XV-K2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="44D-2F-jH5">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="44D-2F-jH5" id="bXg-1K-MCk">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LJO-VQ-ee5" id="Nl7-Ss-MBD"/>
+                            <outlet property="delegate" destination="LJO-VQ-ee5" id="ccf-PO-atE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCE-i0-Aus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1959" y="489"/>
+            <point key="canvasLocation" x="1976" y="489"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hZQ-xu-iaq">

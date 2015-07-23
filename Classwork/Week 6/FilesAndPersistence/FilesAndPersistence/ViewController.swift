@@ -10,6 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var movieField: UITextField!
+    let movieID = "movieID"
+    let defaults = NSUserDefaults.standardUserDefaults()
+    var movies = [String]()
+    
+    
+    @IBAction func submitMovie(sender: UIButton) {
+        movies.append(movieField.text)
+        defaults.setObject(movies, forKey: movieID)
+        println(movies)
+
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
